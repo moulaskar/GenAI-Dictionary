@@ -12,8 +12,14 @@ from io import BytesIO
 LOG = False
 
 # Load the LLaMA 3 model and tokenizer
-model_name = "models/llama-2-7b-chat.Q4_K_S.gguf"  # Update this path to your local LLaMA 3 model
-llm = CTransformers(model=model_name, model_type='gpt2')
+#model_name = "models/llama-2-7b-chat.Q4_K_S.gguf"  # Update this path to your local LLaMA 3 model
+#llm = CTransformers(model=model_name, model_type='gpt2')
+llm = LlamaCpp(
+    model_path="models/llama-2-7b-chat.Q4_0.gguf",
+    n_gpu_layers=40,
+    n_batch=512,  # Batch size for model processing
+    verbose=False,  # Enable detailed logging for debugging
+)
 
 # logger 
 if LOG:
