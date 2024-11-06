@@ -8,7 +8,7 @@ Ver 1.0 - 6th Nov 2024
 Key Features:
 
 - Front End: Built using Streamlit for a user-friendly and interactive interface.
-- Back End: Powered by LangChain framework, with advanced text generation supported by the locally downloaded Llama 2 model for efficiency and control.
+- Back End: Powered by LangChain framework, with advanced text generation supported by Llama 2 model for efficiency and control.
 - Pronunciation Support: Integrates Google Text-to-Speech (gTTS) to deliver accurate pronunciation of each word, aiding in verbal practice.
 This app combines streamlined access to vocabulary details with advanced language tools, offering an all-in-one experience tailored to the unique needs of spelling bee students.
 
