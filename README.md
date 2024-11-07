@@ -12,3 +12,9 @@ Key Features:
 - Pronunciation Support: Integrates Google Text-to-Speech (gTTS) to deliver accurate pronunciation of each word, aiding in verbal practice.
 This app combines streamlined access to vocabulary details with advanced language tools, offering an all-in-one experience tailored to the unique needs of spelling bee students.
 
+
+Ver 2.0 - 7th Nov 2024
+- Reagganged the code
+- Added feature to save the file locally by user choice
+  
+
