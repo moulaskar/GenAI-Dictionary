@@ -86,4 +86,21 @@ def text_to_speech(text):
     audio_fp = BytesIO()
     tts.write_to_fp(audio_fp)
     audio_fp.seek(0)  # Move to the start of the BytesIO stream
-    return audio_fp    
+    return audio_fp  
+
+
+# save the result in single file
+def save_to_file(str_res, base_directory):
+    import os
+    # Specify the filename you want to save
+    file_name = "words.doc"
+    file_path = os.path.join(base_directory, file_name)
+    
+    try:
+        # Write the text to the specified file path
+        with open(file_path, "a+", encoding='utf-8') as file:
+            file.write(str_res)
+        st.success(f"File saved successfully at {file_path}")
+    except Exception as e:
+        st.error(f"Error saving file: {e}")
+    return

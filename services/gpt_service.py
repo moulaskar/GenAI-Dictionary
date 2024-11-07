@@ -14,11 +14,11 @@ def get_prompt():
     prompt_template = PromptTemplate(
         template=(
             "Provide details about the word '{word}' in English and in the following format:\n"
-            "- Definition: \n"
-            "- Example sentence: \n"
-            "- Etymology: \n"
-            "- Synonyms: \n"
-            "- Antonyms: \n\n"
+            "Definition: \n"
+            "Example sentence: \n"
+            "Etymology: \n"
+            "Synonyms: \n"
+            "Antonyms: \n\n"
             "Please do not add any information or comments after the 'Antonyms' section."
             
         ),
@@ -86,7 +86,6 @@ def get_word_info(word, logger):
 
         # Run the chain to generate the response
         response = llm_chain.run({"word": word})
-        response = response.strip('-')
         msg = f'response from langchain run: {response}'
         logger.logMsg(msg)
         # Extract relevant details based on keywords
