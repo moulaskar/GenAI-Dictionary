@@ -15,10 +15,15 @@ This app combines streamlined access to vocabulary details with advanced languag
 Project Structure
 
 main_ui.py: Main Streamlit application file that handles the UI and interaction.
+
 models/: Directory where the Llama2 model is stored.
+
 services/: Custom modules for logging (logging.py) and running services (actions.py).
+
 logs/: To staore the logs if enabled
+
 README.md: This file.
+
 requirements_dictionaryt.txt
 
 Steps:
