@@ -14,26 +14,21 @@ This app combines streamlined access to vocabulary details with advanced languag
 
 Project Structure
 
-main_ui.py: Main Streamlit application file that handles the UI and interaction.
-
-models/: Directory where the Llama2 model is stored.
-
-services/: Custom modules for logging (logging.py) and running services (actions.py).
-
-logs/: To staore the logs if enabled
-
-README.md: This file.
-
-requirements_dictionaryt.txt
+- main_ui.py: Main Streamlit application file that handles the UI and interaction.
+- models/: Directory where the Llama2 model is stored.
+- services/: Custom modules for logging (logging.py) and running services (actions.py).
+- logs/: To staore the logs if enabled
+- README.md: This file.
+- requirements_dictionaryt.txt
 
 Steps:
-1. Create a virtual enviroment
-2. Clone the Repository: https://github.com/moulaskar/GenAI-Dictionary.git
-3. cd AIStudyBot
-4. Download the Llama2 Model: https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF Download the model file (llama-2-7b-chat.Q4_K_S.gguf) from the appropriate source and place it in the models/ directory.
-5. Create a logs dicrectory: logs/
-6. Install the requiremets pip install -r requirements_dictionary.txt
-7. Run the Application: streamlit run studyBot_app.py
+- Create a virtual enviroment
+- Clone the Repository: https://github.com/moulaskar/GenAI-Dictionary.git
+- cd AIStudyBot
+- Download the Llama2 Model: https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF Download the model file (llama-2-7b-chat.Q4_K_S.gguf) from the appropriate source and place it in the models/ directory.
+- Create a logs dicrectory: logs/
+- Install the requiremets pip install -r requirements_dictionary.txt
+- Run the Application: streamlit run studyBot_app.py
 
    
 Ver 2.0 - 7th Nov 2024
