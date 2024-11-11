@@ -5,8 +5,6 @@ from langchain_community.llms import CTransformers
 from services.wandb_logger import WandbLogger
 
 import re
-LOG = False
-
 
 def get_prompt():
     # Define a prompt template for querying the model
@@ -58,22 +56,10 @@ def extract_section(text: str, start_section: str, end_section: str) -> str:
     return pattern_text
 
 
-def get_word_info(word, logger):
+def get_word_info(word, llm, logger):
     
     try:
-        # Create a LangChain LLMChain to manage prompt interaction
-        try:
-            llm = LlamaCpp(
-                model_path="models/llama-2-7b-chat.Q4_K_S.gguf",
-                n_gpu_layers=40,
-                n_batch=512,  # Batch size for model processing
-                verbose=False,  # Enable detailed logging for debugging
-            )
-        except Exception as err:
-            msg = f'Couldnt get the model via LlamaCpp : {err}'
-            logger.logMsg(msg)
-            return None
-        
+        # get the prompt        
         prompt_template = get_prompt()
         logger.logMsg(prompt_template)
         

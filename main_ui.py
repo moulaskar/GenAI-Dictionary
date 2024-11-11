@@ -1,20 +1,45 @@
 import sys
 import re
+import os
 import streamlit as st
 from streamlit.web import cli as stcli
 from streamlit import runtime
 from services.logging import Logger
 from services.helpers import *
 from services.gpt_service import get_word_info
-LOGGER = True
-SAVE_TO_SINGLE_FILE = True
+from huggingface_hub import hf_hub_download
+from langchain_community.llms import LlamaCpp
 
+LOGGER = True
+SAVE_TO_SINGLE_FILE = False
+
+# Pre-requisites and global variables
 # Create a logger object
-if LOGGER:
-    # create logger object
-    logger = Logger("log")
-else:
-    logger = None
+# Initialize Streamlit and display a loading message
+placeholder = st.empty()
+placeholder.text("Preparing the application, Please wait...")
+logger = Logger("log") if LOGGER else None
+
+if not os.path.exists("logs"):
+    os.makedirs("logs")  # Create the 'log' directory
+
+if not os.path.exists("models"):
+    os.makedirs("models")  # Create the 'log' directory
+    # Replace with the repo_id of the model and the specific filename
+    repo_id = "TheBloke/Llama-2-7B-Chat-GGUF"
+    filename = "llama-2-7b-chat.Q4_K_S.gguf"
+
+    # Download the model file
+    model_path = hf_hub_download(repo_id=repo_id, filename=filename, local_dir="models")
+llm = LlamaCpp(
+            model_path="models/llama-2-7b-chat.Q4_K_S.gguf",
+            n_gpu_layers=40,
+            n_batch=512,  # Batch size for model processing
+            verbose=False,  # Enable detailed logging for debugging
+        )
+    
+
+placeholder.text("")
 
 def initialize_UI():
     # Streamlit UI setup
@@ -24,7 +49,7 @@ def initialize_UI():
 def get_info(word, logger):
     # Fetch information using the GPT service function
     logger.logMsg("get_info: getting the result")
-    result = get_word_info(word, logger)
+    result = get_word_info(word, llm, logger)
     return result
 
 

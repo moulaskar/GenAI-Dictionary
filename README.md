@@ -22,17 +22,24 @@ Project Structure
 - requirements_dictionaryt.txt
 
 Steps:
-- Create a virtual enviroment
-- Clone the Repository: https://github.com/moulaskar/GenAI-Dictionary.git
-- cd AIStudyBot
-- Download the Llama2 Model: https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF Download the model file (llama-2-7b-chat.Q4_K_S.gguf) from the appropriate source and place it in the models/ directory.
-- Create a logs dicrectory: logs/
-- Install the requiremets pip install -r requirements_dictionary.txt
-- Run the Application: streamlit run studyBot_app.py
+- Create a python virtual enviroment and activate it.
+- I have used anaconda and VS Code for development
+- Go to the folder of your choice
+- Clone the Repository: git clone https://github.com/moulaskar/GenAI-Dictionary.git
+- cd GenAI-Dictionary
+- If you have Python installed
+    - Install the requiremets pip install -r requirements_dictionary.txt
+- else
+    - Install the requiremets pip install -r requirements.txt
+
+- Run the Application: streamlit run main_ui.py
 
    
 Ver 2.0 - 7th Nov 2024
 - Reagganged the code
 - Added feature to save the file locally by user choice
   
-
+Ver 3.0 - 11th Nov
+- Updated Steps in Readme
+- Added global variables to automate the process
+- updated requirements_dictionary.txt and added requirements.txt
